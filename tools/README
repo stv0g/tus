@@ -1,0 +1,30 @@
+Saison Wechsel:
+===============
+
+1. Neue Kategorien erstellen
+2. Für jede Kategorie einen Bericht erstellen
+3. Neue Navigationseinträge erstellen
+4. Eventuell neue User erstellen
+5. Rechte an User vergeben (auch für alte User auf neue Kategorien Rechte vergeben)
+
+
+zu 1-3:
+add_cats.php verwenden
+
+zu 3:
+folgende Ausnahmen per Hand einfügen
+Home: Platzierungen
+Home: Impressum
+Home: Sponsoren
+Alte Herren: Forum
+
+zu 4:
+per Hand erledigen (phpmyadmin)
+
+zu 5:
+per Hand erledigen (phpmyadmin)
+
+
+ALTERNATIVE:
+
+copy_season.php verwenden

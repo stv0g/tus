@@ -1,0 +1,41 @@
+﻿body {
+	background-color: #790909;
+	font-family: sans-serif;
+}
+
+a {
+	color: #000000;
+}
+
+.Title {
+	font-size: 32px;
+	padding: 5px;
+	text-decoration: underline;
+}
+
+#Table {
+	background-color: #ffffff;
+	color: #000000;
+}
+
+.table1 {
+	padding: 0px;
+	margin: 0px;
+	border-spacing: 1px;
+	background-color: #000000;
+}
+
+.tableitem1 {
+	background-color: #FFFFFF;
+	color: #000000;
+	padding: 5px;
+}	
+
+.tableitem2 {
+	background-color: #790909;
+	color: #ffffff;
+}
+
+.mousehand {
+	cursor: pointer;
+}

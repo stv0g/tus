@@ -1,0 +1,26 @@
+/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
+
+/**
+ * TuS Griesheim Handball CMS
+ *
+ * Stylesheet for newsletter module
+ *
+ * @category	Stylesheet
+ * @name		newsletter.css
+ * @author		Steffen Vogel <info@steffenvogel.de>
+ * @copyright	2006-2008 Steffen Vogel
+ * @license		http://creativecommons.org/licenses/by-nc-nd/2.0/de/
+ * @link		http://tusgriesheim.de/handball/
+ * @since		File available since 19.1.08 
+ */
+
+@CHARSET "UTF-8";
+
+#newsletter {
+	padding: 5px;
+}
+
+#newsletter_count {
+	float: right;
+	margin-bottom: 15px;
+}

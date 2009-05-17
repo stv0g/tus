@@ -1,0 +1,21 @@
+/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
+
+/**
+ * TuS Griesheim Handball CMS
+ *
+ * Stylesheet for search module
+ *
+ * @category	Stylesheet
+ * @name		search.css
+ * @author		Steffen Vogel <info@steffenvogel.de>
+ * @copyright	2006-2008 Steffen Vogel
+ * @license		http://creativecommons.org/licenses/by-nc-nd/2.0/de/
+ * @link		http://tusgriesheim.de/handball/
+ * @since		File available since 10.2.08 
+ */
+
+@CHARSET "UTF-8";
+
+#search {
+	padding: 5px;
+}

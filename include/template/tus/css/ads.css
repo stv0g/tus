@@ -1,0 +1,29 @@
+@CHARSET "UTF-8";
+
+#ads_footer {
+	clear: both;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	width: 950px;
+	border-top: 1px solid black;
+}
+
+#ad_pasha {
+	padding: 5px;
+	margin: 5px;
+	border: 1px solid grey;
+}
+
+#ad_elektro {
+	padding: 5px;
+	margin: 5px;
+	border: 1px solid grey;
+}
+
+#gads {
+	text-align: center;
+	padding: 10px 5px 5px 5px;
+	margin-top: 10px;
+	border-top: 1px solid black;
+}

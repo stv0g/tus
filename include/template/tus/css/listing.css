@@ -1,0 +1,44 @@
+/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
+
+/**
+ * TuS Griesheim Handball CMS
+ *
+ * Stylesheet for listing class
+ *
+ * @category	Stylesheet
+ * @name		listing.css
+ * @author		Steffen Vogel <info@steffenvogel.de>
+ * @copyright	2006-2008 Steffen Vogel
+ * @license		http://creativecommons.org/licenses/by-nc-nd/2.0/de/
+ * @link		http://tusgriesheim.de/handball/
+ * @since		File available since 19.1.08 
+ */
+
+@CHARSET "UTF-8";
+
+#filter_container {
+	margin-bottom: 5px;
+	padding-bottom: 2px;
+	border-bottom: 1px solid black;
+}
+
+#listing_results {
+	margin-bottom: 10px;
+}
+
+#listing_details {
+	font-size: 0.8em;
+}
+
+#search_query {
+	width: 100%;
+	margin-bottom: 4px;
+}
+
+.listing_result_bottom {
+	border-bottom: 1px solid grey;
+}
+
+#listing_results_table {
+	width: 100%;
+}

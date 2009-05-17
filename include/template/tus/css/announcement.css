@@ -1,0 +1,18 @@
+#announcement {
+	border-bottom: 1px solid black;
+	text-align: center;
+	
+	position: relative;
+	
+	font-weight: bold;
+	font-size: 1.1em;
+	
+	border: 5px double #790909;
+}
+
+#announcement_logo {
+	position: absolute;
+	left: 0px;
+	
+	margin: 5px 0 0 5px;
+}

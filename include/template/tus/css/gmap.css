@@ -1,0 +1,34 @@
+/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
+
+/**
+ * TuS Griesheim Handball CMS
+ *
+ * Stylesheet for gmap module
+ *
+ * @category	Language
+ * @name		gmap.css
+ * @author		Steffen Vogel <info@steffenvogel.de>
+ * @copyright	2006-2008 Steffen Vogel
+ * @license		http://creativecommons.org/licenses/by-nc-nd/2.0/de/
+ * @link		http://tusgriesheim.de/handball/
+ * @since		File available since 19.1.08 
+ */
+
+@CHARSET "UTF-8";
+
+#gmap {
+	padding: 5px;
+}
+
+#gmap_map_container {
+	width: 100%;
+	height: 450px;
+}
+
+#gmap_search_container {
+	margin-top: 15px;
+}
+
+#gmap_route_container {
+	margin-top: 15px;
+}

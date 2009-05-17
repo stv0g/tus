@@ -1,0 +1,83 @@
+/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
+
+/**
+ * TuS Griesheim Handball CMS
+ *
+ * Stylesheet for sis module
+ *
+ * @category	Stylesheet
+ * @name		sis.css
+ * @author		Steffen Vogel <info@steffenvogel.de>
+ * @copyright	2006-2008 Steffen Vogel
+ * @license		http://creativecommons.org/licenses/by-nc-nd/2.0/de/
+ * @link		http://tusgriesheim.de/handball/
+ * @since		File available since 19.1.08 
+ */
+
+@CHARSET "UTF-8";
+
+#sis {
+	padding: 5px;
+}
+
+.sis_highlight {
+	background-color: #E68C8C;
+	font-weight: bold;
+}
+
+.sis_ranking {
+	border-collapse: collapse;
+	margin: auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.sis_all_games {
+	border-collapse: collapse;
+	margin: auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.sis_last_games {
+	border-collapse: collapse;
+	margin: auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.sis_next_games {
+	border-collapse: collapse;
+	margin: auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.sis_separator {
+	border: 0px;
+	border-right: 0px;
+}
+
+#sis_last_update {
+	text-align: right;
+}
+
+#sis_ical {
+	
+}
+
+
+.sis_title {
+	border: 0px;
+	text-align: center;
+	font-size: 2em;
+}
+
+#sis_links {
+	text-align: center;
+	margin-top: 6px;
+}
+
+#sis_ranking {
+	padding: 5px;
+}

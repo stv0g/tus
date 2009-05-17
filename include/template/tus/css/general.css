@@ -1,0 +1,120 @@
+/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
+
+/**
+ * TuS Griesheim Handball CMS
+ *
+ * General stylesheet
+ *
+ * @category	Stylesheet
+ * @name		general.css
+ * @author		Steffen Vogel <info@steffenvogel.de>
+ * @copyright	2006-2008 Steffen Vogel
+ * @license		http://creativecommons.org/licenses/by-nc-nd/2.0/de/
+ * @link		http://tusgriesheim.de/handball/
+ * @since		File available since 19.1.08 
+ */
+
+@charset "utf-8";
+
+body {
+	color: #000000;
+	background-color: #790909;
+	background-image: url(../images/bg.gif);
+	background-position: center top;
+	background-repeat: repeat-y;
+	font-family: sans-serif;
+	font-size: 87%;
+	margin: 0 auto;
+	padding: 0px;
+	text-align: center;
+}
+
+#wrap {
+	margin: 0 auto;
+	padding: 0px;
+	width: 950px;
+	height: 100%;
+	text-align: left;
+}
+
+#header {
+	text-align: center;
+	width: 950px;
+	padding: 0px;
+	margin: 0px;
+	border-bottom: 1px solid black;
+}
+
+#middle {
+	width: 785px;
+	padding: 0px;
+	margin: 0px 0px 0px 157px;
+}
+
+#left {
+	float: left;
+	width: 155px;
+	border-right: 1px solid black;
+}
+
+.icon {
+	border: 0px;
+}
+
+.error {
+	color: #790909;
+	font-weight: bold;
+	margin: 5px 5px 5px 5px;
+	padding: 3px 3px 3px 3px;
+	border: 2px dashed #790909;
+}
+
+.clip_text {
+	font-size: 0.85em;
+}
+
+.clip_control {
+	display: block;
+}
+
+.clip_img {
+
+}
+
+.clip_span {
+	display: none;
+}
+
+a:link {
+	color: #000154;
+	text-decoration: underline;
+}
+
+a:visited {
+	color:#4142A3;
+	text-decoration: underline;
+}
+
+a:active {
+	color: black;
+	text-decoration:none;
+}
+
+a:hover {
+	color:black;
+	text-decoration:underline;
+}
+
+input {
+	border: 1px solid grey;
+}
+
+textarea {
+	height: 250px;
+	width: 500px;
+	border: 1px solid grey;
+}
+
+table {
+	border-collapse: collapse;
+}

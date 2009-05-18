@@ -2,6 +2,7 @@
 
 $config['site']['editor'] = 'tiny_mce';
 $config['site']['season'] = 2008;
+$config['site']['announcement'] = false;
 
 $config['mysql']['user'] = 'tus';
 $config['mysql']['pw'] = 'f1b0n4c1';

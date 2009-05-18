@@ -1,5 +1,6 @@
 <?php 
 
+if ($config['site']['announcement']) {
 echo '<div id="announcement">
 		<img id="announcement_logo" src="' . $site['path']['web'] . '/images/announcement.gif" alt="{lang:general:announcement}" />
 		<p style="text-align: center">
@@ -11,5 +12,6 @@ echo '<div id="announcement">
 			Bei Interesse wendet Euch bitte an den Trainer: <a href="' . $site['path']['web'] . '/index.php?module=contact&usr_id=12">Uwe Rinschen</a>, 0171 7831302
 		</p>
 	</div>';
+}
 
 ?>

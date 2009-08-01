@@ -1,7 +1,7 @@
 <?php
 
 $config['site']['editor'] = 'tiny_mce';
-$config['site']['season'] = 2008;
+$config['site']['season'] = 2009;
 $config['site']['announcement'] = false;
 
 $config['mysql']['user'] = 'tus';

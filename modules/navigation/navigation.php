@@ -50,7 +50,7 @@ echo '<li><a' . (($site['module'] == 'gbook') ? ' id="navigation_active"' : '') 
 echo '<li><a' . (($site['module'] == 'contact') ? ' id="navigation_active"' : '') . ' href="' . $site['path']['web'] . '/index.php?module=contact">{icon:email_edit:{lang:general:contact}} {lang:general:contact}</a></li>';
 echo '<li><a' . (($site['module'] == 'links') ? ' id="navigation_active"' : '') . ' href="' . $site['path']['web'] . '/index.php?module=links">{icon:link:{lang:general:links}} {lang:general:links}</a></li>';
 echo '<li><a href="' . $site['path']['web'] . '/modules/article/newsfeed.php">{icon:feed:{lang:general:newsfeed}} {lang:general:newsfeed}</a></li>';
-echo '<li><a href="' . $site['path']['web'] . '/index.php?module=frame&url=' . urlencode('http://www.forum.griesm.de/viewforum.php?f=16') . '">{icon:group:{lang:general:forum}} {lang:general:forum}</a></li>';
+echo '<li><a href="' . $site['path']['web'] . '/index.php?module=frame&url=' . urlencode('http://www.forum.griesm.de/viewforum.php') . '">{icon:group:{lang:general:forum}} {lang:general:forum}</a></li>';
 echo '</ul></div>';
 
 ?>

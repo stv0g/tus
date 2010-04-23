@@ -3,7 +3,7 @@
 # TUS Griesheim Handball CMS  (5.5.2007)   #
 # Web: http://www.tusgriesheim.de/handball #
 # Mail: handball@tusgriesheim.de           #
-# by Steffen Vogel (info@steffenvogel.de)        #
+# by Steffen Vogel (info@steffenvogel.de)  #
 ############################################
 # modules/article.php - The Article Module #
 ############################################
@@ -47,7 +47,7 @@ elseif (!empty($id) && $command == 'edit') {
 		}
 		else {
 			include_editor($config['site']['editor']);
-			$result = mysql_query('SELECT articles.id AS id, articles.type AS type, DATE_FORMAT(articles.last_update, GET_FORMAT(DATE,\'EUR\')) AS last_update_formatted, UNIX_TIMESTAMP(articles.last_update) AS last_update, DATE_FORMAT(articles.date, GET_FORMAT(DATE,\'EUR\')) AS date_formated, UNIX_TIMESTAMP(articles.date) AS date, articles.title AS title, articles.text AS text, users.prename AS editor_prename, users.lastname AS editor_lastname, users.mail AS editor_mail FROM articles LEFT JOIN users ON users.id = articles.editor_id WHERE articles.id = ' . $id . ' LIMIT 1', $connection);
+			$result = mysql_query('SELECT articles.id AS id, articles.type AS type, DATE_FORMAT(articles.last_update, UNIX_TIMESTAMP(articles.last_update) AS last_update, DATE_FORMAT(articles.date, GET_FORMAT(DATE,\'EUR\')) AS date_formated, UNIX_TIMESTAMP(articles.date) AS date, articles.title AS title, articles.text AS text, users.prename AS editor_prename, users.lastname AS editor_lastname, users.mail AS editor_mail FROM articles LEFT JOIN users ON users.id = articles.editor_id WHERE articles.id = ' . $id . ' LIMIT 1', $connection);
 			$line = mysql_fetch_array($result);
 			echo '<form onsubmit="return check_article(this);" name="article" action="' . $_SERVER['PHP_SELF'] . '?module=article&amp;command=edit&amp;id=' . $line['id'] . '&amp;cat_id=' . $cat_id . '" method="post" accept-charset="utf-8">
 					<input type="hidden" name="send_to_custom_mail" />
@@ -185,7 +185,7 @@ elseif (empty($site['command'])) {
 				echo $newest->get_html(false, true) . '</div>';
 			}
 			
-			$result = mysql_query('SELECT articles.id AS id, articles.type AS type, DATE_FORMAT(articles.last_update, \'%d.%m.%Y %H:%i:%s\') AS last_update_formatted, UNIX_TIMESTAMP(articles.last_update) AS last_update, DATE_FORMAT(articles.date, GET_FORMAT(DATE,\'EUR\')) AS date_formated, UNIX_TIMESTAMP(articles.date) AS date, articles.title AS title, articles.text AS text, articles.view_count AS view_count, users.id AS editor_id, users.prename AS editor_prename, users.lastname AS editor_lastname, users.mail AS editor_mail FROM articles LEFT JOIN users ON users.id = articles.editor_id WHERE articles.id = ' . $id . ' LIMIT 1', $connection);
+			$result = mysql_query('SELECT articles.id AS id, articles.type AS type, UNIX_TIMESTAMP(articles.last_update) AS last_update, DATE_FORMAT(articles.date, GET_FORMAT(DATE,\'EUR\')) AS date_formated, UNIX_TIMESTAMP(articles.date) AS date, articles.title AS title, articles.text AS text, articles.view_count AS view_count, users.id AS editor_id, users.prename AS editor_prename, users.lastname AS editor_lastname, users.mail AS editor_mail FROM articles LEFT JOIN users ON users.id = articles.editor_id WHERE articles.id = ' . $id . ' LIMIT 1', $connection);
 			if (mysql_num_rows($result) > 0) {
 				$line = mysql_fetch_array($result);
 				
@@ -198,7 +198,7 @@ elseif (empty($site['command'])) {
 						<div>' . hl($line['text'], get_search_words()) . '</div>
 						<table id="article_details">
 							<tr><td class="column_title">{lang:article:published}</td><td class="column_title">{lang:article:edited}</td><td class="column_title">{lang:article:publisher}</td><td class="column_title">{lang:general:view_count}</td></tr>
-							<tr><td>' . $line['date_formated'] . '</td><td>' . $line['last_update_formatted']  . '</td><td><a href="' . $site['path']['web'] . '/index.php?module=contact&amp;usr_id=' . $line['editor_id'] . '">' . $line['editor_prename'] . ' ' . $line['editor_lastname'] . '</a></td><td>' . $line['view_count'] . ' x</td></tr><tr>';
+							<tr><td>' . strftime('%A, %e. %B %Y', $line['date']) . '</td><td>' . strftime('%A, %e. %B %Y, %H:%M', $line['last_update'])  . '</td><td><a href="' . $site['path']['web'] . '/index.php?module=contact&amp;usr_id=' . $line['editor_id'] . '">' . $line['editor_prename'] . ' ' . $line['editor_lastname'] . '</a></td><td>' . $line['view_count'] . ' mal</td></tr><tr>';
 							if ($rights['del']) echo '<td><a onclick="return confirm(\'{lang:article:confirm_del}\')" href="' . $site['path']['web'] . '/index.php?module=article&amp;command=del&amp;cat_id=' . $cat_id . '&amp;id=' . $line['id'] . '">{icon:delete:{lang:general:del}} {lang:general:del}</a></td>';
 							if ($rights['edit']) echo '<td><a href="' . $site['path']['web'] . '/index.php?module=article&amp;command=edit&amp;cat_id=' . $cat_id . '&amp;id=' . $line['id'] . '">{icon:pencil:{lang:general:edit}} {lang:general:edit}</a></td></tr>';
 				echo '</tr></table>';

@@ -22,7 +22,7 @@ $site['path']['server'] = $_SERVER['DOCUMENT_ROOT'] . $site['path']['web'];
 
 include($site['path']['server'] . '/include/init.inc.php');
 
-$oldSeason = 2008;
+$oldSeason = 2009;
 
 $cats = mysql_query('SELECT * FROM categories WHERE season = ' .$oldSeason);
 $access = mysql_query('SELECT * FROM access LEFT JOIN categories ON access.cat_id = categories.id WHERE categories.season = ' . $oldSeason);

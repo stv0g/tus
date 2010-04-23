@@ -23,27 +23,15 @@ $result = mysql_query('SELECT articles.id AS id, cat_id, title
 $news = '';
 
 echo '<div id="newsticker">';
-if (false) {
-	while (($line = mysql_fetch_array($result))) {
-		$news .= $line['title'] . ' +++ ';
-	}
-	
-	echo '<object classid="java:zticker.class" codebase="' . $site['path']['web'] . '/modules/newsticker/" codetyte="application/java" width="790" height="25">
-		<param name="msg" value="' . $news . '">
-		<param name="href" value="index.php">
-		<param name="speed" value="5">
-		<param name="bgco" value="255,255,255">
-		<param name="txtco" value="000,000,000">
-		<param name="hrefco" value="255,255,255">
-	</object>';
+
+
+
+while (($line = mysql_fetch_array($result))) {
+	$news[] = '<a href="' . $site['path']['web'] . '/index.php?module=article&amp;id=' . (int) $line['id'] . '&amp;cat_id=' . $line['cat_id'] . '">' . stripslashes($line['title']) . '</a>';
 }
-elseif (true) {
-	while (($line = mysql_fetch_array($result))) {
-		$news .= '<a href="' . $site['path']['web'] . '/index.php?module=article&amp;id=' . (int) $line['id'] . '&amp;cat_id=' . $line['cat_id'] . '">' . stripslashes($line['title']) . '</a> +++ ';
-	}
 	
-	echo '<marquee onmouseover="this.stop()" onmouseout="this.start()" direction="left" scrollamount="3" scrolldelay="10" align="middle" height="25">' . $news . '</marquee>';
-}
+echo '<marquee onmouseover="this.stop()" onmouseout="this.start()" direction="left" scrollamount="3" scrolldelay="10" align="middle" height="25">' . implode(' +++ ', $news) . '</marquee>';
+
 
 echo '</div>';
 

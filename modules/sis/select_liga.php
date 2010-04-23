@@ -27,7 +27,9 @@ $doc = new DOMDocument();
 $doc->loadHTML(curl_exec($ch));
 curl_close($ch);
 
-$post = '__VIEWSTATE=' . urlencode(getValue('__VIEWSTATE', $doc)) . '&__EVENTVALIDATION=' . urlencode(getValue('__EVENTVALIDATION', $doc)) . '&__EVENTTARGET=&__EVENTARGUMENT=&ctl00%24ContentPlaceHolder1%24TextBox1=' . $config['sis']['user'] . '&ctl00%24ContentPlaceHolder1%24TextBox2=' . $config['sis']['pw'] . '&ctl00%24ContentPlaceHolder1%24Button1=Anmelden';
+$post = '__VIEWSTATE=' . getValue('__VIEWSTATE', $doc) . '&__EVENTVALIDATION=' . getValue('__EVENTVALIDATION', $doc) . '&TextBox1=' . $config['sis']['user'] . '&TextBox2=' . $config['sis']['pw'] . '&Button1=Anmelden';
+
+//die($post);
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$url);

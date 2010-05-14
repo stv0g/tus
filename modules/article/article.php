@@ -47,8 +47,24 @@ elseif (!empty($id) && $command == 'edit') {
 		}
 		else {
 			include_editor($config['site']['editor']);
-			$result = mysql_query('SELECT articles.id AS id, articles.type AS type, DATE_FORMAT(articles.last_update, UNIX_TIMESTAMP(articles.last_update) AS last_update, DATE_FORMAT(articles.date, GET_FORMAT(DATE,\'EUR\')) AS date_formated, UNIX_TIMESTAMP(articles.date) AS date, articles.title AS title, articles.text AS text, users.prename AS editor_prename, users.lastname AS editor_lastname, users.mail AS editor_mail FROM articles LEFT JOIN users ON users.id = articles.editor_id WHERE articles.id = ' . $id . ' LIMIT 1', $connection);
+			
+			$sql = 'SELECT
+					articles.id AS id,
+					articles.type AS type,
+					UNIX_TIMESTAMP(articles.last_update) AS last_update,
+					UNIX_TIMESTAMP(articles.date) AS date, 
+					articles.title AS title, 
+					articles.text AS text,
+					users.prename AS editor_prename,
+					users.lastname AS editor_lastname,
+					users.mail AS editor_mail
+				FROM articles
+				LEFT JOIN users ON users.id = articles.editor_id
+				WHERE articles.id = ' . (int) $id . ' LIMIT 1';
+
+			$result = mysql_query($sql, $connection);
 			$line = mysql_fetch_array($result);
+
 			echo '<form onsubmit="return check_article(this);" name="article" action="' . $_SERVER['PHP_SELF'] . '?module=article&amp;command=edit&amp;id=' . $line['id'] . '&amp;cat_id=' . $cat_id . '" method="post" accept-charset="utf-8">
 					<input type="hidden" name="send_to_custom_mail" />
 					<table>
@@ -184,8 +200,23 @@ elseif (empty($site['command'])) {
 				$newest = new listing('', 0, 0, $cat_id, $config['articles']['types'], $config['articles']['home_count']);
 				echo $newest->get_html(false, true) . '</div>';
 			}
-			
-			$result = mysql_query('SELECT articles.id AS id, articles.type AS type, UNIX_TIMESTAMP(articles.last_update) AS last_update, DATE_FORMAT(articles.date, GET_FORMAT(DATE,\'EUR\')) AS date_formated, UNIX_TIMESTAMP(articles.date) AS date, articles.title AS title, articles.text AS text, articles.view_count AS view_count, users.id AS editor_id, users.prename AS editor_prename, users.lastname AS editor_lastname, users.mail AS editor_mail FROM articles LEFT JOIN users ON users.id = articles.editor_id WHERE articles.id = ' . $id . ' LIMIT 1', $connection);
+
+				$sql = 'SELECT
+					articles.id AS id,
+					articles.type AS type,
+					UNIX_TIMESTAMP(articles.last_update) AS last_update,
+					UNIX_TIMESTAMP(articles.date) AS date, 
+					articles.title AS title, 
+					articles.text AS text,
+					users.prename AS editor_prename,
+					users.lastname AS editor_lastname,
+					users.mail AS editor_mail
+				FROM articles
+				LEFT JOIN users ON users.id = articles.editor_id
+				WHERE articles.id = ' . (int) $id . ' LIMIT 1';
+
+			$result = mysql_query($sql, $connection);
+
 			if (mysql_num_rows($result) > 0) {
 				$line = mysql_fetch_array($result);
 				

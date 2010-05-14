@@ -15,7 +15,7 @@ echo '<div id="navigation">
 while($line_cat = mysql_fetch_array($result_cat)) {
 	if ($site['cat']['id'] == $line_cat['id']) {
 		echo '<li><a' . ((empty($_GET['nav_id']) && $site['module'] == 'article') ? ' id="navigation_active"' : '') . ' href="' . $site['path']['web'] . '/index.php?cat_id=' . $line_cat['id'] . '">{icon:group:' . htmlspecialchars($line_cat['name']) . '}&nbsp;' . htmlspecialchars($line_cat['name']) . '</a><ul>';
-		$result_nav = mysql_query('SELECT * FROM navigation WHERE cat_id = ' . $site['cat']['id'], $site['db']['connection']);
+		$result_nav = mysql_query('SELECT * FROM navigation WHERE cat_id = ' . $site['cat']['id'] . ' ORDER BY title ASC', $site['db']['connection']);
 		while ($line_nav = mysql_fetch_array($result_nav)) {
 			echo '<li><a' . (((int) $_GET['nav_id'] == $line_nav['id']) ? ' id="navigation_active"' : '') . ' href="' . htmlentities($line_nav['uri']) . ((strpos($line_nav['uri'], 'index.php') === 0) ? '&nav_id=' . $line_nav['id'] : '') . '">{icon:bullet_black:' . $line_nav['title'] . '}&nbsp;' . $line_nav['title'] . '</a></li>';
 		}

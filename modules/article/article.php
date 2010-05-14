@@ -210,7 +210,8 @@ elseif (empty($site['command'])) {
 					articles.text AS text,
 					users.prename AS editor_prename,
 					users.lastname AS editor_lastname,
-					users.mail AS editor_mail
+					users.mail AS editor_mail,
+					articles.view_count AS view_count
 				FROM articles
 				LEFT JOIN users ON users.id = articles.editor_id
 				WHERE articles.id = ' . (int) $id . ' LIMIT 1';

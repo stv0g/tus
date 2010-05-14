@@ -41,9 +41,9 @@ $lang['sis']['difference'] = 'Diff.';
 $lang['sis']['ical'] = 'Alle Spiele als Kalender herunterladen';
 
 $lang['sis']['no_data'] = 'Keine Daten vorhanden!';
-$lang['sis']['no_id'] = 'Bitte geben Sie eine korrekte Liga ID an!';
+$lang['sis']['no_id'] = 'Bitte geben Sie eine SiS-Liga ID an!';
 
-$lang['sis']['success_edit'] = 'Die IDs wurden korrekt übernommen';
+$lang['sis']['success_edit'] = 'Die ID wurden korrekt übernommen';
 
 $lang['sis']['ranking'] = 'Platzierungen';
 

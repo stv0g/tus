@@ -39,7 +39,7 @@ class sis {
 			mysql_query('DELETE FROM sis_cache WHERE id = ' . $this->cat_id, $site['db']['connection']);
 		}
 		
-		if (mysql_num_rows($result) != 1) {
+		if (mysql_num_rows($result) == 0) {
 			mysql_query('INSERT INTO sis_cache (cat_id, type) VALUES(' . $this->cat_id . ', ' . $this->type . ')', $site['db']['connection']);
 		}
 		
